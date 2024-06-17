@@ -14,3 +14,15 @@ body{
 
 }
 
+#instalarBoton{
+    background-color: #cd4662;
+    color: white;
+    padding: 10px 20px;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#instalarBoton:hover{
+    background-color: #fb8cb1;
+}
