@@ -1,8 +1,9 @@
 // Key Api 
-const key ="4c18124e";
+const key = '4c18124e';
+const endpoint= 'https://www.omdbapi.com/?';
 
-const buscarPelicula = document.getElementById("Input");
-const mostrarListaBusqueda = document.getElementsByClassName("container-movies");
+const buscarPelicula = document.getElementById('Input');
+const mostrarListaBusqueda = document.getElementsByClassName('container-movies');
 
 // consultar datos por URL
 async function fetchPelicula(id){
@@ -26,7 +27,7 @@ async function listaPeliculas(peliculas){
             const poster = pelicula.Poster !== "N/A" ? pelicula.Poster : "No hay un poster de pelicula";
             const id = pelicula.imdbID;
             return `
-            <div class="movie-item"
+            <div class="movie-item">
                 <div class="poster-movie">
                     <a href="detalle-peli.html?id=${id}">
                     <img src="${poster}" alt="Poster de la pelicula"></a>
@@ -72,3 +73,8 @@ async function cargarPeliculaHome(){
 }
 
 document.addEventListener("DOMContentLoaded", cargarPeliculaHome);
+
+const mostrarPelicula = (id) => {
+    window.location.href = "http://127.0.0.1:5500/detalle-peli.html?id=" + id;
+}
+
