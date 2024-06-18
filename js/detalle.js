@@ -1,4 +1,4 @@
-const url_endpoint= 'https://www.omdbapi.com/?';
+const urlApit= 'https://www.omdbapi.com/?';
 
 async function cargarDetallePelicula() {
     try {

@@ -1,8 +1,9 @@
 // Key Api 
 const key = '4c18124e';
-const endpoint= 'https://www.omdbapi.com/?';
+const urlApi= 'https://www.omdbapi.com/?';
 
-const buscarPelicula = document.getElementById('Input');
+const formBusqueda = document.getElementById('busqueda');
+const campoBusqueda = document.getElementById('Input');
 const mostrarListaBusqueda = document.getElementsByClassName('container-movies');
 
 // consultar datos por URL
@@ -52,6 +53,26 @@ async function listaPeliculas(peliculas){
     }
 }
 
+//buscar y mostrar peliculas segun la busqueda del usuario
+async function buscadorPelicula(buscar){
+    buscar.preventDefault(); //previene el envio predeterminado
+    try{
+        const url = `${urlApi}s=${campoBusqueda.value.trim()}&page=1&apikey=${key}`;
+        const resultado = await fetch(`${url}`);
+        const data = await resultado.json();
+        
+        if (data.Search){
+            listaPeliculas(data.Search);
+
+        }
+
+    } catch (error){
+        console.error("Error en el buscador", error);
+    }
+}
+
+formBusqueda.addEventListener('submit', buscadorPelicula);
+
 //obtener y mostrar peliculas aleatorias en la pagina Home
 async function cargarPeliculaHome(){
     try{
@@ -60,9 +81,9 @@ async function cargarPeliculaHome(){
         const buscarPelicula = ["action", "comedy", "drama", "horror", "romance", "thriller"];
         //
         const peliculaAleatoria = buscarPelicula[Math.floor(Math.random() * buscarPelicula.length)];
-        const url = `https://www.omdbapi.com/?S=${peliculaAleatoria}&page=1&apikey=${key}`;
-        const res = await fetch(url);
-        const data = await res.json();
+        const url = `${urlApi}S=${peliculaAleatoria}&page=1&apikey=${key}`;
+        const resultado = await fetch(url);
+        const data = await resultado.json();
         
         if (data.Search){
             listaPeliculas(data.Search);
