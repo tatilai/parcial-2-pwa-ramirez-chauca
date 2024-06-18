@@ -16,8 +16,10 @@ async function fetchPelicula(id){
         return data;
     }catch (error){
         console.error ("error en obtener peliculas", error);
-    }
+    }console.log(fetchPelicula)
 }
+
+
 
 //crear los items peliculas
 async function listaPeliculas(peliculas){
@@ -43,7 +45,7 @@ async function listaPeliculas(peliculas){
             </div>`;
         })
         .join("");
-        
+
         const container = document.querySelector(".container-movies");
         container.innerHTML = elementosPelicula;
         console.log(peliculas);
@@ -52,4 +54,5 @@ async function listaPeliculas(peliculas){
         console.error("Error en mostrar las peliculas en Inicio", error);
     }
 }
+
 
