@@ -9,7 +9,7 @@
         {
             "src":"/imagen/icon-64x64.png",
             "sizes": "64x64",
-            "type": "image/png",
+            "type": "image/png"
         },
         {
            "src":"/imagen/icon-32x32.png",
