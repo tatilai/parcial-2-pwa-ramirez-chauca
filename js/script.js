@@ -39,6 +39,8 @@ async function listaPeliculas(peliculas){
                             <p class="movie-name"><a href="detalle-peli.html?id=${id}">${pelicula.Title}</a></p>
                             <p class="movie-year"><a href="detalle-peli.html?id=${id}">${pelicula.Year}</a></p>
                         </div>
+
+                        <a href="detalle-peli.html?id=${id}" class ="btn btn-mas">Ver Más</a>
                     </div>
                 </div>
             </div>`
