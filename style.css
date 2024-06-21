@@ -35,22 +35,5 @@ main{
     border-radius: 100vmax important!;
 }
 
-.brand-logo{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.brand-logo img{
-    width: 40px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.brand-logo h1{
-    margin: 0;
-    font-size: 1.5rem;
-}
 
 
