@@ -78,8 +78,18 @@ self.addEventListener('fetch', event=>{
 
 
 
-self.addEventListener('install',()=>{
+self.addEventListener('install',(e)=>{
   console.log("hola,soy un service worker,y me estoy instalando");  
+  e.waitUntil(
+    caches.open('caches').then(cache=>{
+        cache.addAll([
+           
+            'icon-64x64.png',
+            
+           
+        ])
+    })
+  )
 })
 
 
