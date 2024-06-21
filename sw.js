@@ -85,15 +85,7 @@ self.addEventListener('install',(e)=>{
         cache.addAll([
            '/',
            '/home.html',
-           '/detalle-peli.html',
-           '/imagen/icon-64x64.png',
-    '/imagen/icon-32x32.png',
-    '/style.css',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
-    'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
-    '/js/script.js',
-    '/js/detalle.js'
+        
             
            
         ]);
