@@ -84,6 +84,7 @@ const urlsToCache =[
     'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
     'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
     'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+    'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js',
     '/imagen/icon-64x64.png',
     '/imagen/icon32x32.png',
     '/js/script.js',
@@ -94,16 +95,18 @@ const urlsToCache =[
 self.addEventListener('install',(e)=>{
     console.log("hola,soy un service worker,y me estoy instalando");  
     e.waitUntil(
-      caches.open(CACHE_NAME).then(cache=>{
+      caches.has(CACHE_NAME).then(estaInstalado=>{
         console.log('service worker:caching files');
-          cache.addAll(urlsToCache);
+        if(!estaInstalado){
+            return caches.open(CACHE_NAME).then(cache=>{
+               cache.addAll(urlsToCache); 
+            })
+        }
+          
       })
-      .then(()=>self.skipWaiting())
+     // .then(()=>self.skipWaiting())
     );
   })
-  
-  
-  
   
   
   
@@ -111,6 +114,16 @@ self.addEventListener('install',(e)=>{
       console.log("Soy un service worker. Y me estoy activando.");
   });
 
+
+  self.addEventListener('fetch',(e)=>{
+    const consulta = e.request;
+    caches.match(consulta).then((respuesta)=>{
+        if(respuesta)return respuesta;
+        return fetch(consulta).then((respuesta)=>{
+            return respuesta;
+        })
+    })
+  })
 
 
 
