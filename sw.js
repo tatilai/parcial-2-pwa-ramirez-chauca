@@ -78,7 +78,6 @@ const CACHE_NAME='prueba-1';
 
 const urlsToCache =[
     '/',
-    'home.html',
     'detalle-peli.html',
     'vistos.html',
     'style.css',
