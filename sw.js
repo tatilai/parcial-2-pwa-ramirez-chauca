@@ -84,13 +84,18 @@ self.addEventListener('install',(e)=>{
     caches.open('caches').then(cache=>{
         cache.addAll([
            
-            'icon-64x64.png',
+            'script.js',
             
            
-        ])
+        ]);
     })
-  )
+  );
 })
 
+
+
+self.addEventListener('activate', () => {
+    console.log("Soy un service worker. Y me estoy activado.");
+});
 
 
