@@ -75,31 +75,31 @@ self.addEventListener('fetch', event=>{
 */
 
 
-
-
-
 self.addEventListener('install',(e)=>{
-  console.log("hola,soy un service worker,y me estoy instalando");  
-  e.waitUntil(
-    caches.open('prueba-1').then(cache=>{
-        cache.addAll([
-           '/',
-           '/home.html',
-        
-            
-           
-        ]);
-    })
-  );
-})
+    console.log("hola,soy un service worker,y me estoy instalando");  
+    e.waitUntil(
+      caches.open('prueba-1').then(cache=>{
+          cache.addAll([
+             '/',
+             '/home.html',
+          
+              
+             
+          ]);
+      })
+    );
+  })
+  
+  
+  
+  
+  
+  
+  self.addEventListener('activate', () => {
+      console.log("Soy un service worker. Y me estoy activando.");
+  });
 
 
 
-
-
-
-self.addEventListener('activate', () => {
-    console.log("Soy un service worker. Y me estoy activando.");
-});
 
 
