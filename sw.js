@@ -1,4 +1,4 @@
-const CACHE_NAME= 'Popcorn-cache-v1';
+/*const CACHE_NAME= 'Popcorn-cache-v1';
 const urlsToCache=[
     '/',
     '/home.html',
@@ -72,4 +72,15 @@ self.addEventListener('fetch', event=>{
         })
     )
 })
+*/
+
+
+
+
+
+self.addEventListener('install',()=>{
+  console.log("hola,soy un service worker,y me estoy instalando");  
+})
+
+
 

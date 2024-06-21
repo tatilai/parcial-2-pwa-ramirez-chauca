@@ -101,3 +101,13 @@ const mostrarPelicula = (id) => {
     window.location.href = "http://127.0.0.1:5500/detalle-peli.html?id=" + id;
 }
 
+
+if(navigator.serviceWorker){
+    navigator.serviceWorker.register('./sw.js').then(()=>{
+        console.info("registrado");
+    })
+    .catch(()=>{
+
+        console.error("fallo");
+    });
+}

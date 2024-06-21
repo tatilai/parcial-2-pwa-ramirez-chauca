@@ -1,21 +1,4 @@
-{
-    "name": "Popcorn App",
-    "short_name":"Popcorn",
-    "start-url": "/home.html",
-    "display":"standalone",
-    "background_color":"#ffffff",
-    "theme_color": "#ff6f00",
-    "icons":[
-        {
-            "src":"/imagen/icon-64x64.png",
-            "sizes": "64x64",
-            "type": "image/png"
-        },
-        {
-           "src":"/imagen/icon-32x32.png",
-           "sizes":"32x32",
-           "type":"image/png"
 
-        }
-    ]
-}
+
+
+
