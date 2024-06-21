@@ -81,7 +81,7 @@ self.addEventListener('fetch', event=>{
 self.addEventListener('install',(e)=>{
   console.log("hola,soy un service worker,y me estoy instalando");  
   e.waitUntil(
-    caches.open('caches').then(cache=>{
+    caches.open('prueba-1').then(cache=>{
         cache.addAll([
            '/',
            '/home.html',
@@ -94,14 +94,12 @@ self.addEventListener('install',(e)=>{
 })
 
 
-if(window.caches){
-    caches.has('caches').then(console.log);
-}
+
 
 
 
 self.addEventListener('activate', () => {
-    console.log("Soy un service worker. Y me estoy activado.");
+    console.log("Soy un service worker. Y me estoy activando.");
 });
 
 
