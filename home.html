@@ -47,19 +47,6 @@
      <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-     <script>
-      if('serviceWorker' in navigator){
-        window.addEventListener('load', ()=>{
-          navigator.serviceWorker.register('/service-worker.js')
-          .then(registration=>{
-            console.log('service worker registrado con exito:',registration);
-          })
-          .catch(error=>{
-            console.error('Error al registrar el service worker:',error);
-          });
-        });
-      }
-     </script>
 
     <script src="js/script.js"></script>
     <script src="js/service-worker.js"></script>
