@@ -94,6 +94,11 @@ self.addEventListener('install',(e)=>{
 })
 
 
+if(window.caches){
+    caches.has('caches').then(console.log);
+}
+
+
 
 self.addEventListener('activate', () => {
     console.log("Soy un service worker. Y me estoy activado.");
