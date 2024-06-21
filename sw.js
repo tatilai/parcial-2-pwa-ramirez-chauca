@@ -117,13 +117,14 @@ self.addEventListener('install',(e)=>{
 
   self.addEventListener('fetch',(e)=>{
     const consulta = e.request;
-    caches.match(consulta).then((respuesta)=>{
+    const respuestaCacheada=caches.match(consulta).then((respuesta)=>{
+         console.log("responde",respuesta)
         if(respuesta)return respuesta;
-        console.log("responde")
         return fetch(consulta).then((respuesta)=>{
             return respuesta;
         })
     })
+    e.respondWith(respuestaCacheada);
   })
 
 
