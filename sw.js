@@ -74,7 +74,7 @@ self.addEventListener('fetch', event=>{
 })
 */
 
-
+const CACHE_NAME='prueba-1';
 
 const urlsToCache =[
     'home.html',
@@ -91,7 +91,7 @@ const urlsToCache =[
 self.addEventListener('install',(e)=>{
     console.log("hola,soy un service worker,y me estoy instalando");  
     e.waitUntil(
-      caches.open('prueba-1').then(cache=>{
+      caches.open(CACHE_NAME).then(cache=>{
         console.log('service worker:caching files');
           cache.addAll(urlsToCache);
       })
