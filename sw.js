@@ -75,21 +75,25 @@ self.addEventListener('fetch', event=>{
 */
 
 
+
+const urlsToCache =[
+    'home.html',
+    'detalle-peli.html',
+    'vistos.html',
+    'style.css',
+    '/js/script.js',
+    '/js/detalle.js'
+]
+
+
 self.addEventListener('install',(e)=>{
     console.log("hola,soy un service worker,y me estoy instalando");  
     e.waitUntil(
       caches.open('prueba-1').then(cache=>{
-          cache.addAll([
-             
-            '/js/script.js'
-            
-           
-          ]).catch(error=>{
-            console.error("fallo al agregar cursos al cache",error);
-          });
-      }).catch(error=>{
-        console.error("error al abriri el cache:",error);
+        console.log('service worker:caching files');
+          cache.addAll(urlsToCache);
       })
+      .then(()=>self.skipWaiting())
     );
   })
   
