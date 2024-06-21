@@ -81,6 +81,8 @@ const urlsToCache =[
     'detalle-peli.html',
     'vistos.html',
     'style.css',
+    '/imagen/icon-64x64.png',
+    '/imagen/icon32x32.png',
     '/js/script.js',
     '/js/detalle.js'
 ]
