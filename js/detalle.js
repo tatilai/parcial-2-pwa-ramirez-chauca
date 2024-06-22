@@ -64,6 +64,8 @@ async function cargarDetallePelicula() {
 
 
 function mostrarDetalle(data){
+    const contenedorPelicula = document.createElement('div');
+    contenedorPelicula.classList.add('pelicula-detalles');
     const detallePelis=document.getElementById('container-detalle');
     detallePelis.innerHTML=` 
     
@@ -74,7 +76,7 @@ function mostrarDetalle(data){
         <div class="card-image">
           <img src="${data.Poster}">
           <span class="card-title">${data.Title} - ${data.Type}</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
         </div>
         <div class="card-content">
         <p>Año: ${data.Year}</p>
