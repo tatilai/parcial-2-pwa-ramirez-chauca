@@ -125,4 +125,3 @@ if(navigator.serviceWorker){
 }
 
 
-console.log(Dexie);
