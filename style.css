@@ -36,4 +36,19 @@ main{
 }
 
 
+#historialLista{
+    list-style-type: none;
+    padding: 0;
+}
+
+#historialLista li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #e68c3a;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color:whitesmoke ;
+   
+}
+
 
