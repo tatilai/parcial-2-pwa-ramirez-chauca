@@ -116,6 +116,7 @@ self.addEventListener('install',(e)=>{
 
 
   self.addEventListener('fetch',(e)=>{
+    console.log("cache only")
     const consulta = e.request;
     const respuestaCacheada=caches.match(consulta).then((respuesta)=>{
          console.log("responde",respuesta)
@@ -126,6 +127,9 @@ self.addEventListener('install',(e)=>{
     })
     e.respondWith(respuestaCacheada);
   })
+
+
+
 
 
 
