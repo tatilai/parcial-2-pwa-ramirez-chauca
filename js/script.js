@@ -102,6 +102,19 @@ const mostrarPelicula = (id) => {
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Obtener el botón de historial una vez que el DOM esté cargado
+    const btnHistorial = document.getElementById('btnHistorial');
+
+    // Agregar evento de clic al botón de historial
+    btnHistorial.addEventListener('click', () => {
+        //console.log('boton historial clikeado');
+      
+        window.location.href = 'vistos.html';
+    });
+
+});
+
 if(navigator.serviceWorker){
     navigator.serviceWorker.register('./sw.js').then(()=>{
         console.info("registrado");
