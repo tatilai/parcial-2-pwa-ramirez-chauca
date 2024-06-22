@@ -6,4 +6,17 @@ const dbVersion = db.version(1).stores({
     logs:"++id,date"
 });
 
-console.log("dbVersion", dbVersion)
+db.logs
+      .add({
+        date: new Date().getTime()
+      })
+        .then(()=>db.logs
+                 .where('date') 
+                 .below(new Date(2024, 4, 22).getTime())
+                 .toArray()
+
+            
+        )
+        .then((logs)=>{
+            console.log("logs",logs)
+        })
