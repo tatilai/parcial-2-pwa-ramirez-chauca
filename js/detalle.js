@@ -13,7 +13,7 @@ async function cargarDetallePelicula() {
 }
 
 //detalles que mostraremos a traves elementos HTML - DOM
-function mostrarDetalle(data){
+/*function mostrarDetalle(data){
     const contenedorPelicula = document.createElement('div');
     contenedorPelicula.classList.add('pelicula-detalles');
 
@@ -60,6 +60,42 @@ function mostrarDetalle(data){
 
     const container = document.querySelector('.container-detalle');
     container.appendChild(contenedorPelicula);
+}*/
+
+
+function mostrarDetalle(data){
+    const detallePelis=document.getElementById('container-detalle');
+    detallePelis.innerHTML=` 
+    
+    
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <img src="${data.Poster}">
+          <span class="card-title">${data.Title} - ${data.Type}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+        <p>Año: ${data.Year}</p>
+        <p>País: ${data.Country}</p>
+        <p>Actores: ${data.Actors}</p>
+        <p>Director: ${data.Director}</p>
+        <p>Género: ${data.Genre}</p>
+        <p>Idioma: ${data.Language}</p>
+        <p>Duración: ${data.Runtime}</p>
+        <p>${data.Plot}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    
+    
+    
+    
+    
+    `
 }
 
 document.addEventListener('DOMContentLoaded', cargarDetallePelicula);

@@ -93,6 +93,7 @@ const urlsToCache =[
 
 
 self.addEventListener('install',(e)=>{
+    return;
     console.log("hola,soy un service worker,y me estoy instalando");  
     e.waitUntil(
       caches.has(CACHE_NAME).then(estaInstalado=>{
@@ -130,14 +131,15 @@ self.addEventListener('install',(e)=>{
 
 
 
+  //cache dinamico
   self.addEventListener('fetch', (e) => {
-    console.log("cache dinamica")
+   //console.log("cache dinamica")
     const consulta = e.request;
     const respuestaCacheada = caches.match(consulta).then(async (respuesta) => {
         if(respuesta) return respuesta;
-        const nuevaRespuesta = await fetch(consulta) //si no está cacheado, lo busca
-        const cache = await caches.open(CACHE_NAME) //busco el almacen
-        await cache.put(consulta, nuevaRespuesta.clone()) //guardo lo que encontró con fetch
+        const nuevaRespuesta = await fetch(consulta) 
+        const cache = await caches.open(CACHE_NAME) 
+        await cache.put(consulta, nuevaRespuesta.clone()) 
         return nuevaRespuesta;
     })
     e.respondWith(respuestaCacheada);
