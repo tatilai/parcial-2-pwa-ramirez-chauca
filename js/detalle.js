@@ -98,7 +98,6 @@ function mostrarDetalle(data){
     guardarEnHistorial(data.Title);
 }
 
-document.addEventListener('DOMContentLoaded', cargarDetallePelicula);
 
 
 
@@ -110,7 +109,9 @@ function guardarEnHistorial(peliculaId){
         historial.push(peliculaId);
         localStorage.setItem('historial', JSON.stringify(historial));
     }
-    historial.push(peliculaId);
+  //  historial.push(peliculaId);
 
   //  localStorage.setItem('historial',JSON.stringify(historial));
 }
+
+document.addEventListener('DOMContentLoaded', cargarDetallePelicula);
