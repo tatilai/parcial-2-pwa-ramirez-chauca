@@ -130,6 +130,20 @@ self.addEventListener('install',(e)=>{
 
 
 
+  self.addEventListener('fetch', (e) => {
+    console.log("cache dinamica")
+    const consulta = e.request;
+    const respuestaCacheada = caches.match(consulta).then(async (respuesta) => {
+        if(respuesta) return respuesta;
+        const nuevaRespuesta = await fetch(consulta) //si no está cacheado, lo busca
+        const cache = await caches.open(CACHE_NAME) //busco el almacen
+        await cache.put(consulta, nuevaRespuesta.clone()) //guardo lo que encontró con fetch
+        return nuevaRespuesta;
+    })
+    e.respondWith(respuestaCacheada);
+})
+
+
 
 
 
