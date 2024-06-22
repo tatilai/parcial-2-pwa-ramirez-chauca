@@ -91,13 +91,26 @@ function mostrarDetalle(data){
       </div>
     </div>
   </div>
-    
-    
-    
-    
-    
+     
     
     `
+
+    guardarEnHistorial(data.id);
 }
 
 document.addEventListener('DOMContentLoaded', cargarDetallePelicula);
+
+
+
+function guardarEnHistorial(peliculaId){
+    let historial = JSON.parse(localStorage.getItem('historial')) || [] ;
+
+
+    if (!historial.includes(peliculaId)) {
+        historial.push(peliculaId);
+        localStorage.setItem('historial', JSON.stringify(historial));
+    }
+    historial.push(peliculaId);
+
+  //  localStorage.setItem('historial',JSON.stringify(historial));
+}
