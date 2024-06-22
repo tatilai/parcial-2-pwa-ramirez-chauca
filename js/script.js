@@ -123,3 +123,6 @@ if(navigator.serviceWorker){
         console.error("fallo");
     });
 }
+
+
+console.log(Dexie);
