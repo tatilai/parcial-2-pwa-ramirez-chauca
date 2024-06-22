@@ -1,4 +1,20 @@
-const urlApit= 'https://www.omdbapi.com/?';
+//const urlApit= 'https://www.omdbapi.com/?';
+
+const urlApit = 'https://www.omdbapi.com/?apikey=4c18124e';
+
+async function fetchPelicula(id) {
+    try {
+        const URL = `${urlApit}&i=${id}`;
+        const respuesta = await fetch(URL);
+        if (!respuesta.ok) {
+            throw new Error("No hubo una conexión realizada");
+        }
+        const data = await respuesta.json();
+        return data;
+    } catch (error) {
+        console.error("Error en obtener la película", error);
+    }
+}
 
 async function cargarDetallePelicula() {
     try {
@@ -95,7 +111,7 @@ function mostrarDetalle(data){
     
     `
 
-    guardarEnHistorial(data.Title);
+    guardarEnHistorial(data.imdbID);
 }
 
 

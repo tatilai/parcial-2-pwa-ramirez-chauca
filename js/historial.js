@@ -34,13 +34,14 @@ const key = '4c18124e';
 });*/
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const historial = JSON.parse(localStorage.getItem('historial')) || [];
     const historialLista = document.getElementById('historialLista');
 
     if (historial.length > 0) {
         historial.forEach(id => {
-            fetch(`http://www.omdbapi.com/?i=${id}&apikey=${key}`)
+            fetch(`https://www.omdbapi.com/?i=${id}&apikey=${key}`)
                 .then(response => response.json())
                 .then(data => {
                     const listaItem = document.createElement('div');
