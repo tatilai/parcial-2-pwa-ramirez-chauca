@@ -93,7 +93,7 @@ const urlsToCache =[
 
 
 self.addEventListener('install',(e)=>{
-    return;
+    
     console.log("hola,soy un service worker,y me estoy instalando");  
     e.waitUntil(
       caches.has(CACHE_NAME).then(estaInstalado=>{
