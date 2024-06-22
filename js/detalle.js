@@ -95,7 +95,7 @@ function mostrarDetalle(data){
     
     `
 
-    guardarEnHistorial(data.id);
+    guardarEnHistorial(data.Title);
 }
 
 document.addEventListener('DOMContentLoaded', cargarDetallePelicula);
