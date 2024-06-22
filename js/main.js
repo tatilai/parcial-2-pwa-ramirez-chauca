@@ -6,17 +6,25 @@ const dbVersion = db.version(1).stores({
     logs:"++id,date"
 });
 
+const mostrarLista=(logs)=>{
+    const lista= document.getElementById('lista');
+    logs.forEach(log=>{
+      lista.innerHTML += `<li>${log.date}</li> `
+    });
+}
+
 db.logs
       .add({
         date: new Date().getTime()
       })
         .then(()=>db.logs
                  .where('date') 
-                 .below(new Date(2024, 4, 22).getTime())
+                 .below(new Date(2024, 4, 20).getTime())
                  .toArray()
 
             
         )
         .then((logs)=>{
-            console.log("logs",logs)
+        //mostrarLista(logs)
+        console.log("logs:",logs)
         })
