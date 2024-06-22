@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const historialLista = document.getElementById('historialLista');
 
     if (historial && historial.length > 0) {
-        historial.forEach(pokemonId => {
+        historial.forEach(id => {
             fetch(`http://www.omdbapi.com/?i=${id}&apikey=${key}`)
                 .then(response => response.json())
                 .then(data => {

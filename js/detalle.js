@@ -1,5 +1,8 @@
 //const urlApit= 'https://www.omdbapi.com/?';
 
+
+let historial =[];
+
 const urlApit = 'https://www.omdbapi.com/?apikey=4c18124e';
 
 async function fetchPelicula(id) {
