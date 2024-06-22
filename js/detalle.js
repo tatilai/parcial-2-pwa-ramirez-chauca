@@ -111,7 +111,7 @@ function mostrarDetalle(data){
     
     `
 
-    guardarEnHistorial(data.imdbID);
+    guardarEnHistorial(data.title);
 }
 
 

@@ -3,12 +3,12 @@ const key = '4c18124e';
 
 
 
-/*document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     
    
 
     // Obtener el historial y mostrarlo en el DOM
-    const historial = JSON.parse(localStorage.getItem('historial')) || [];
+    const historial = JSON.parse(localStorage.getItem('historial'));
     const historialLista = document.getElementById('historialLista');
 
     if (historial && historial.length > 0) {
@@ -31,11 +31,11 @@ const key = '4c18124e';
         listaItem.textContent = 'No hay elementos en el historial.';
         historialLista.appendChild(listaItem);
     }
-});*/
+});
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     const historial = JSON.parse(localStorage.getItem('historial')) || [];
     const historialLista = document.getElementById('historialLista');
 
@@ -67,4 +67,4 @@ document.addEventListener('DOMContentLoaded', () => {
         listaItem.textContent = 'No hay elementos en el historial.';
         historialLista.appendChild(listaItem);
     }
-});
+});*/
