@@ -111,7 +111,7 @@ function mostrarDetalle(data){
     
     `
 
-    guardarEnHistorial(data.title);
+    guardarEnHistorial(data.Title);
 }
 
 
