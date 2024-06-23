@@ -26,5 +26,5 @@ db.logs
         )
         .then((logs)=>{
         //mostrarLista(logs)
-        console.log("logs:",logs)
+        console.log("hola")
         })

@@ -112,15 +112,15 @@ self.addEventListener('install',(e)=>{
   
   
   self.addEventListener('activate', () => {
-      console.log("Soy un service worker. Y me estoy activando.");
+     // console.log("Soy un service worker. Y me estoy activando.");
   });
 
 
   self.addEventListener('fetch',(e)=>{
-    console.log("cache only")
+   // console.log("cache only")
     const consulta = e.request;
     const respuestaCacheada=caches.match(consulta).then((respuesta)=>{
-         console.log("responde",respuesta)
+       //  console.log("responde",respuesta)
         if(respuesta)return respuesta;
         return fetch(consulta).then((respuesta)=>{
             return respuesta;
