@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                    
                     const listaItem = document.createElement('li');
-                    listaItem.textContent = ` pelicula: ${data.Title} (ID: ${id})`;
+                    listaItem.textContent = ` pelicula: ${id}`;
                     historialLista.appendChild(listaItem);
                 })
                 .catch(error => {
