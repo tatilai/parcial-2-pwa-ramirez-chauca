@@ -2,9 +2,11 @@
 const key = '4c18124e';
 const urlApi= 'https://www.omdbapi.com/?';
 
-const formBusqueda = document.getElementById('busqueda');
-const campoBusqueda = document.getElementById('Input');
-const mostrarListaBusqueda = document.getElementsByClassName('container-movies');
+const formBusquedaNav = document.getElementById('busqueda-nav');
+const formBusquedaMain = document.getElementById('busqueda-main');
+const formBusquedaSidenav = document.getElementById('busqueda-sidenav');
+
+const mostrarListaBusqueda = document.querySelector('.container-movies');
 
 // consultar datos por URL
 async function fetchPelicula(id){
@@ -55,17 +57,17 @@ async function listaPeliculas(peliculas){
     }
 }
 
-//buscar y mostrar peliculas segun la busqueda del usuario
+// Buscar y mostrar películas según la búsqueda del usuario
 async function buscadorPelicula(buscar){
-    buscar.preventDefault(); //previene el envio predeterminado
+    buscar.preventDefault(); // previene el envío predeterminado
+    const input = buscar.target.querySelector('input[type="text"]').value.trim();
     try{
-        const url = `${urlApi}s=${campoBusqueda.value.trim()}&page=1&apikey=${key}`;
+        const url = `${urlApi}s=${input}&page=1&apikey=${key}`;
         const resultado = await fetch(`${url}`);
         const data = await resultado.json();
-        
+            
         if (data.Search){
             listaPeliculas(data.Search);
-
         }
 
     } catch (error){
@@ -73,7 +75,10 @@ async function buscadorPelicula(buscar){
     }
 }
 
-formBusqueda.addEventListener('submit', buscadorPelicula);
+// Añadir eventos a los formularios
+if (formBusquedaNav) formBusquedaNav.addEventListener('submit', buscadorPelicula);
+if (formBusquedaMain) formBusquedaMain.addEventListener('submit', buscadorPelicula);
+if (formBusquedaSidenav) formBusquedaSidenav.addEventListener('submit', buscadorPelicula);
 
 //obtener y mostrar peliculas aleatorias en la pagina Home
 async function cargarPeliculaHome(){
@@ -123,5 +128,3 @@ if(navigator.serviceWorker){
         console.error("fallo");
     });
 }
-
-
