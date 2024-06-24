@@ -95,7 +95,6 @@ function mostrarDetalle(data){
         <div class="card-image">
           <img src="${data.Poster}">
           
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
         </div>
         <div class="card-content">
           <div class="box-title"><span class="card-title">${data.Title} - ${data.Type}</span></div>
