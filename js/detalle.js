@@ -94,18 +94,21 @@ function mostrarDetalle(data){
       <div class="card">
         <div class="card-image">
           <img src="${data.Poster}">
-          <span class="card-title">${data.Title} - ${data.Type}</span>
+          
           <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
         </div>
         <div class="card-content">
-        <p>Año: ${data.Year}</p>
-        <p>País: ${data.Country}</p>
-        <p>Actores: ${data.Actors}</p>
-        <p>Director: ${data.Director}</p>
-        <p>Género: ${data.Genre}</p>
-        <p>Idioma: ${data.Language}</p>
-        <p>Duración: ${data.Runtime}</p>
-        <p>${data.Plot}</p>
+          <div class="box-title"><span class="card-title">${data.Title} - ${data.Type}</span></div>
+          <div class="box-detalle">
+            <p><span>Año:</span> ${data.Year}</p>
+            <p><span>País:</span> ${data.Country}</p>
+            <p><span>Actores:</span> ${data.Actors}</p>
+            <p><span>Director:</span> ${data.Director}</p>
+            <p><span>Género:</span> ${data.Genre}</p>
+            <p><span>Idioma:</span> ${data.Language}</p>
+            <p><span>Duración:</span> ${data.Runtime}</p>
+            <p>${data.Plot}</p>
+          </div>
         </div>
       </div>
     </div>

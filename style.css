@@ -147,3 +147,49 @@ form input{
     border:none;
     background-color: #7181ec;
 }
+.card{
+    border: 2px solid rgb(178, 178, 246);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+.card-image{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card .card-content {
+    padding: 0px;
+    background-color: #a58cff;
+}
+
+.box-title{
+    background-color: #9077e9;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgb(235, 228, 255);
+}
+
+.card-title{
+    background-color: #3a65e600;
+    width: 100%;
+    color: #FFFF00;
+}
+.card .card-content .card-title {
+    font-weight: 600;
+}
+.box-detalle p>span{
+    color: #fff200;
+    font-weight: 600;
+  
+    
+}
+
+.card .card-content p{
+    color: white;
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+    font-weight: 400;
+}
