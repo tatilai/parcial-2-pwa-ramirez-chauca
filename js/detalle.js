@@ -93,12 +93,15 @@ function mostrarDetalle(data){
     <div class="col s12 m6">
       <div class="card">
         <div class="card-image">
-          <img src="${data.Poster}">
-          
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
+         
+          <img src="${data.Poster}"> 
         </div>
+        
         <div class="card-content">
-          <div class="box-title"><span class="card-title">${data.Title} - ${data.Type}</span></div>
+          <div class="box-title"><span class="card-title">${data.Title} - ${data.Type}</span>
+             <a class="btn-floating right waves-effect waves-light red m-0"><i class="material-icons">favorite</i></a>
+          </div>
+            
           <div class="box-detalle">
             <p><span>Año:</span> ${data.Year}</p>
             <p><span>País:</span> ${data.Country}</p>

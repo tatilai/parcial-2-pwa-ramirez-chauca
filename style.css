@@ -44,7 +44,7 @@ main{
 #historialLista li {
     margin-bottom: 10px;
     padding: 10px;
-    background-color: #3a65e6;
+    background-color: #31a5bf;
     border-radius: 5px;
     text-transform: uppercase;
     color:whitesmoke;
@@ -132,9 +132,6 @@ h1{
     font-size: 17px;
 }
 
-form input{
-    background-color: white;
-}
 
 .search-bar{
     background-color: white;
@@ -154,11 +151,20 @@ form input{
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 .card-image{
     width: 100%;
-    height: 100%;
+    height: auto; 
     overflow: hidden;
+}
+
+.card .card-image>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card .card-content {
@@ -182,9 +188,7 @@ form input{
 }
 .box-detalle p>span{
     color: #fff200;
-    font-weight: 600;
-  
-    
+    font-weight: 600;   
 }
 
 .card .card-content p{
@@ -192,4 +196,17 @@ form input{
     padding: 0.3rem;
     padding-left: 0.5rem;
     font-weight: 400;
+}
+
+.material-icons.custom-color{
+    color: #fff176;
+}
+
+i.material-icons{
+    position: fixed;
+}
+
+
+i.btn-floating {
+    position: fixed;
 }
