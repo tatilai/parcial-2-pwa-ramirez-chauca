@@ -21,40 +21,29 @@
 </head>
 <body class="indigo">
     <header>
-      <div>
-        <nav class="indigo darken-3">
-            <div class="nav-wrapper container">
-              <a href="home.html" class="brand-logo right"><img src="imagen/icon-64x64.png" alt="logo de la app">Popcorn App</a>
-              <a href="#" data-target="menu-responsive" class="sidenav-trigger left">
-                <i class="material-icons custom-color">menu</i>
-              </a>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="vistos.html">Lista pelis vistas</a></li>
-                <li>
-                  <form class="d-flex justify-content-center p-1" id="busqueda" role="buscar">
-                    <input type="text" placeholder="Buscar pelicula.." class="search-bar" id="Input">
-                    <button type="submit" class="buscar transparent">Buscar</button>
-                  </form>
-                </li>
-              </ul>
-            </div>
-        </nav>
-
-        <ul class="left sidenav" id="menu-responsive"> 
-          <li><a href="home.html">Home</a></li>
-          <li><a href="lista.html">Lista</a></li>
-          <li>
-            <form class="d-flex justify-content-center p-1" id="busqueda" role="buscar">
-              <input type="text" placeholder="Buscar pelicula.." class="search-bar" id="Input">
-              <button type="submit" class="btn btn-historial buscar transparent">Buscar</button>
-            </form>
-          </li>
-          <li class="nav-item"> <button id="btnHistorial" class="btn btn-historial">Historial </button></li>
-        </ul>
-      </div>
-
-      </div>
+      <nav class="indigo darken-3">
+        <div class="nav-wrapper">
+          <div class="logo"> 
+                <a href="home.html" class="brand-logo">
+                  <img src="imagen/icon-64x64.png" alt="logo de la app">
+                  Popcorn App
+                </a>
+             </div>
+          
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+              <form class="d-flex justify-content-center p-1" id="busqueda" role="buscar">
+                <input type="text" placeholder="Buscar pelicula.." class="search-bar" id="Input">
+                <button type="submit" class="buscar transparent">Buscar</button>
+              </form>
+            </li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="vistos.html">Lista pelis vistas</a></li>
+            
+          </ul>
+        </div>
+    </nav>
+      
     </header>
 
 
