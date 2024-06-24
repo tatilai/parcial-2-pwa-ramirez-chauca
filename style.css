@@ -51,6 +51,10 @@ main{
    
 }
 
+nav{
+    padding: 0 2rem;
+}
+
 h1{
     font-weight: 800;
     color: rgb(238, 230, 144);
@@ -111,7 +115,7 @@ h1{
     background-color: #c5cae9;
 }
 
-.btn{
+.movie .btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,8 +123,27 @@ h1{
     background-color: rgb(70, 70, 173);
     border-radius: 10px;
 }
-.busqueda{
-    background-color: #3e4b99;
+.buscar{
+    color: rgb(255, 230, 156);
+    font-weight: 500;
     border: none;
     height: auto;
+    padding: 0.6rem 0.5rem 0 1.5rem;
+    font-size: 17px;
+}
+
+form input{
+    background-color: white;
+}
+
+.search-bar{
+    background-color: white;
+}
+#busqueda input{
+    margin: 0px;
+}
+.btn-historial{
+    margin-right: 1rem;
+    border:none;
+    background-color: #7181ec;
 }
