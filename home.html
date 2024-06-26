@@ -82,15 +82,11 @@
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-     import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+     import {getDocs,collection, getFirestore,query } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
      // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
      
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+     
       const firebaseConfig = {
         apiKey: "AIzaSyD0Gt3BJMamXQAhXMyDO9R7jCE2-8CWxCE",
         authDomain: "popcorn-app-f7640.firebaseapp.com",
@@ -103,7 +99,20 @@
     
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
+      const db = getFirestore(app); //defino que voy a usar  la base de datos
+
+     const usuarioRef= collection(db,"usuarios"); // me conecto con la collection 
+     const usuarios = query(usuarioRef); //establezco la consulta   
+
+     getDocs(usuarios).then((lista)=>{ //me traigo lso datos
+      lista.forEach(documento=>{
+        console.log(documento)
+      })
+     });
+      
+
+
+
     </script>
      <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
