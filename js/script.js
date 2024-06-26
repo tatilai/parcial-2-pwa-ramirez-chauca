@@ -130,23 +130,3 @@ if(navigator.serviceWorker){
 }
 
 
-function guardarDato(){
-    const name =document.getElementById("name").value;
-    const url =document.getElementById("url").value;
-    const age =document.getElementById("age").value;
-    const nuevoRegistro={
-        name,
-        url,
-        age
-    }
-    console.log( nuevoRegistro);
-  document.getElementById("name").value ="";
-  document.getElementById("url").value ="";
-  document.getElementById("age").value ="";
-
-}
-
-const guardar= document.getElementById("guardar");
-guardar.addEventListener("click",()=>{
-   guardarDato()
-})

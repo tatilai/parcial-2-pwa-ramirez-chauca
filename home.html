@@ -82,7 +82,7 @@
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-     import {getDocs,collection, getFirestore,query } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+     import {addDoc,getDocs,collection, getFirestore,query } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
      // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
      
@@ -109,10 +109,30 @@
         console.log(documento.data())
       })
      });
-      
 
 
+     function guardarDato(){
+    const name =document.getElementById("name").value;
+    const url =document.getElementById("url").value;
+    const age =document.getElementById("age").value;
+    const nuevoRegistro={
+        name,
+        url,
+        age
+    }
+    console.log( nuevoRegistro)
+    addDoc(usuarioRef,nuevoRegistro); 
+  document.getElementById("name").value ="";
+  document.getElementById("url").value ="";
+  document.getElementById("age").value ="";
 
+}
+
+const guardar= document.getElementById("guardar");
+guardar.addEventListener("click",()=>{
+   guardarDato()
+})
+     
     </script>
      <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
