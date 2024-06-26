@@ -48,6 +48,16 @@ main{
    
 }
 
+#lista li{
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #31a5bf;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color:whitesmoke;
+
+}
+
 nav{
     padding: 0 2rem;
 }
