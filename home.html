@@ -67,7 +67,7 @@
         <input type="text" name="name" id="name">
         <input type="url" name="url" id="url">
         <input type="number" name="age" id="age">
-        <button type="button" onclick="guardarDato()">Guardar</button>
+        <button id="guardar" type="button" >Guardar</button>
 
 
 
@@ -104,7 +104,7 @@
      const usuarioRef= collection(db,"usuarios"); // me conecto con la collection 
      const usuarios = query(usuarioRef); //establezco la consulta   
 
-     getDocs(usuarios).then((lista)=>{ //me traigo lso datos
+     getDocs(usuarios).then((lista)=>{ //me traigo los datos
       lista.forEach(documento=>{
         console.log(documento.data())
       })

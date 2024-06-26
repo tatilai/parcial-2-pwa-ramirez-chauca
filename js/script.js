@@ -140,5 +140,13 @@ function guardarDato(){
         age
     }
     console.log( nuevoRegistro);
-    alert("funciona")
+  document.getElementById("name").value ="";
+  document.getElementById("url").value ="";
+  document.getElementById("age").value ="";
+
 }
+
+const guardar= document.getElementById("guardar");
+guardar.addEventListener("click",()=>{
+   guardarDato()
+})
