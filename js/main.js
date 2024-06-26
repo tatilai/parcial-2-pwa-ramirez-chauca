@@ -1,4 +1,4 @@
-const db = new Dexie("AplicacionWeb");
+/*const db = new Dexie("AplicacionWeb");
 
 const dbVersion = db.version(1).stores({
 
@@ -11,7 +11,7 @@ const dbVersion = db.version(1).stores({
     logs.forEach(log=>{
       lista.innerHTML += `<li>${log.date}</li> `
     });
-}*/
+}
 
 db.logs
       .add({
@@ -28,3 +28,6 @@ db.logs
         //mostrarLista(logs)
         console.log("logs",logs);
         })
+*/
+
+console.log(Dexie);
