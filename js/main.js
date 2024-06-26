@@ -19,7 +19,7 @@ db.logs
       })
         .then(()=>db.logs
                  .where('date') 
-                 .below(new Date.getTime())
+                 .below(new Date(2024,5,21).getTime())
                  .toArray()
 
             
