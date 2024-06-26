@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified CSS materialize-->
@@ -18,10 +18,10 @@
    
     <title>Cartelera de Pelis</title>
     <link rel="manifest" href="manifest.json">
-</head>
-<body class="indigo">
-  
+  </head>
+  <body class="indigo">
      <header>
+
       <nav class="indigo darken-3">
         <div class="nav-wrapper">
         
@@ -50,10 +50,16 @@
        
          
 
+
     </header> 
     
-    <main class="container.fluid transparent">
+    <main class="container.fluid transparent ">      
+      <form class="d-flex justify-content-center p-1 d-md-none" id="busqueda-main" role="buscar">
+        <input type="text" placeholder="Buscar pelicula.." class="search-bar" id="InputMain">
+        <button type="submit" class="buscar transparent ">Buscar</button><br>
+      </form>
       <h1 class="d-flex justify-content-center" >Destacados hoy</h1>
+
       <div class="container-movies"></div>
            
       
@@ -76,5 +82,5 @@
        });
     </script>
    
-</body>
+  </body>
 </html>
