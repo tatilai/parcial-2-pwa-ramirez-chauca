@@ -128,3 +128,17 @@ if(navigator.serviceWorker){
         console.error("fallo");
     });
 }
+
+
+function guardarDato(){
+    const name =document.getElementById("name").value;
+    const url =document.getElementById("url").value;
+    const age =document.getElementById("age").value;
+    const nuevoRegistro={
+        name,
+        url,
+        age
+    }
+    console.log( nuevoRegistro);
+    alert("funciona")
+}
