@@ -1,11 +1,9 @@
 <?PHP
 //inicializo variables con los datos que necesito traer de la superglobal
-echo "<pre>";
-print_r($_POST);
-echo "</pre>"; 
+ 
 
 
-$nombre = $_POST['nombre'];
+$name = $_POST['name'];
 $email=$_POST['email'];
 
 
@@ -18,7 +16,7 @@ function soloLetras($str){
 if (!(soloLetras($name))){
     
     echo("<div>
-            <h2>Ooops</h2>
+            <h1>Ooops</h1>
             <p>El campo nombre  no puede contener número o caracteres especiales.</p>
         </div>");
 
