@@ -139,7 +139,8 @@ if(navigator.serviceWorker){
       M.toast({html: `Modo offline activado`})
     })
     .catch(()=>{
-        console.error("fallo");
+        M.toast({html: `fallo registro service worker`})
+        //console.error("fallo");
     });
 }
 
