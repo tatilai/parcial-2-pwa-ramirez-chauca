@@ -182,16 +182,7 @@ setTimeout( () => {
     }
 }, 200);
 
-/*window.addEventListener("beforeinstallprompt",(e)=>{
-    console.log("beforeinstalprompt",e)
-eventoDeInstalacion = e;
-});
 
-const installButton= document.getElementById("installButton");
-installButton.addEventListener("click",()=>{
-    console.log("eventoDeInstalacion",eventoDeInstalacion);
-
-})*/
 
 /*if(navigator?.serviceWorker) {
     navigator.serviceWorker.register('./sw.js').then((register) => {
