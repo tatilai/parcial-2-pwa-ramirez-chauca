@@ -185,7 +185,9 @@ installButton.addEventListener("click", () => {
                 ocultarBotonInstalacion();
             }
         })
-        .catch((error) => console.log("error al instalar"))
+        .catch((error) => {
+            console.error("Error al instalar", error);  
+        });
     }
 })
 
