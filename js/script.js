@@ -225,6 +225,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
+//toast
+const elemensToast= document.querySelector("#toast");
+elemensToast.addEventListener("click",()=>{
+    const instanceToast= M.toast({
+        html: "soy una notificacion"
+    });
+})
+
 /*if(navigator?.serviceWorker) {
     navigator.serviceWorker.register('./sw.js').then((register) => {
         M.toast({html: `Modo offline activado`})
