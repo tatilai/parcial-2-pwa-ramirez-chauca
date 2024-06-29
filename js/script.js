@@ -134,8 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let eventoDeInstalacion=null;
 
-
-if(navigator.serviceWorker){
+document.addEventListener('DOMContentLoaded',function(){
+    if(navigator.serviceWorker){
     navigator.serviceWorker.register('./sw.js').then(()=>{
        //mostrarToast({html:`Modo offline activado`}) 
       // console.log("registrado");
@@ -146,6 +146,7 @@ if(navigator.serviceWorker){
         //console.error("fallo");
     });
 }
+ })
 
 //Detectar cambio de conexion a online
 window.addEventListener('online',()=>{
