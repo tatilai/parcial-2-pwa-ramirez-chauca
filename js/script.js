@@ -134,23 +134,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let eventoDeInstalacion=null;
 
-document.addEventListener('DOMContentLoaded',function(){
-    if(navigator.serviceWorker){
-    navigator.serviceWorker.register('./sw.js').then(()=>{
+
+
+navigator.serviceWorker.register('./sw.js').then(()=>{
        //mostrarToast({html:`Modo offline activado`}) 
-      // console.log("registrado");
+       console.log("registrado");
       M.toast({html: `Modo offline activado`})
+      alert("online")
     })
     .catch(()=>{
         M.toast({html: `fallo registro service worker`})
-        //console.error("fallo");
+        console.error("fallo");
     });
-}
- })
+
 
 //Detectar cambio de conexion a online
 window.addEventListener('online',()=>{
     console.log("activo")
+    alert("estas online")
     //M.toast({html: 'Conexión restablecida - Estás en línea' })
 });
 
@@ -158,6 +159,7 @@ window.addEventListener('online',()=>{
 window.addEventListener('offline',()=>{
     console.log("offline")
     M.toast({ html: 'Conexión perdida - Estás offline'})
+    alert("Conexión perdida - Estás offline")
 })
 
 
@@ -227,13 +229,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-//toast
-const elemensToast= document.querySelector("#toast");
-elemensToast.addEventListener("click",()=>{
-    const instanceToast= M.toast({
-        html: "soy una notificacion"
-    });
-})
+
+
+
 
 /*if(navigator?.serviceWorker) {
     navigator.serviceWorker.register('./sw.js').then((register) => {
