@@ -20,6 +20,16 @@ const formBusquedaSidenav = document.getElementById('busqueda-sidenav');
 
 const mostrarListaBusqueda = document.querySelector('.container-movies');
 
+
+//Funcion para mostrar toast
+function mostrarToast(mensaje,tipo="info"){
+    let clases ="";
+    if(tipo === "error"){
+         clases ="red darken-4";
+        }
+        M.toast({html:mensaje, classes:clases}); // Aquí se usa el mensaje pasado como argumento
+}
+
 // consultar datos por URL
 async function fetchPelicula(id){
     try{
@@ -32,6 +42,7 @@ async function fetchPelicula(id){
         return data;
     } catch(error){
         console.error("error en obtener la pelicula", error);
+        mostrarToast("Error en obtener la película", "error");
     }
 
 }
@@ -66,6 +77,7 @@ async function listaPeliculas(peliculas){
         console.log(peliculas);
     } catch(error){
         console.error("Error en mostrar las peliculas en Inicio", error);
+        mostrarToast("Error en mostrar las películas en Inicio", "error");
     }
 }
 
@@ -84,6 +96,7 @@ async function buscadorPelicula(buscar){
 
     } catch (error){
         console.error("Error en el buscador", error);
+        mostrarToast("Error en el buscador", "error")
     }
 }
 
@@ -109,6 +122,7 @@ async function cargarPeliculaHome(){
         }
     } catch(error){
         console.error("Error en cargar las peliculas en Home", error);
+        mostrarToast("Error en cargar las películas en Home", "error");
     }
 }
 
@@ -132,15 +146,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+
 let eventoDeInstalacion=null;
 
-
-
+//registro de sw
 navigator.serviceWorker.register('./sw.js').then(()=>{
        //mostrarToast({html:`Modo offline activado`}) 
        console.log("registrado");
       M.toast({html: `Modo offline activado`})
-      alert("online")
+      //alert("online")
     })
     .catch(()=>{
         M.toast({html: `fallo registro service worker`})
