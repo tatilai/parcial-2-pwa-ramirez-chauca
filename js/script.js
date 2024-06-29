@@ -132,9 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+let eventoDeInstalacion=null;
 
 
-/*if(navigator.serviceWorker){
+if(navigator.serviceWorker){
     navigator.serviceWorker.register('./sw.js').then(()=>{
        //mostrarToast({html:`Modo offline activado`}) 
       // console.log("registrado");
@@ -144,17 +145,28 @@ document.addEventListener('DOMContentLoaded', () => {
         M.toast({html: `fallo registro service worker`})
         //console.error("fallo");
     });
-}*/
+}
 
 
-if(navigator?.serviceWorker) {
+window.addEventListener("beforeinstallprompt",(e)=>{
+    console.log("beforeinstalprompt",e)
+eventoDeInstalacion = e;
+});
+
+const installButton= document.getElementById("installButton");
+installButton.addEventListener("click",()=>{
+    console.log("eventoDeInstalacion",eventoDeInstalacion);
+
+})
+
+/*if(navigator?.serviceWorker) {
     navigator.serviceWorker.register('./sw.js').then((register) => {
         M.toast({html: `Modo offline activado`})
     })
     .catch((error) => {
         console.log("")
     })
-}
+}*/
 
 
 

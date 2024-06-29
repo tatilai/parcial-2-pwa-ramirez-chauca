@@ -151,6 +151,13 @@ h1{
     border:none;
     background-color: #7181ec;
 }
+
+#installButton{
+    margin-right: 1rem;
+    border:none;
+    background-color: #d371ec;
+    border-radius: 20px;
+}
 .card{
     border: 2px solid rgb(178, 178, 246);
     border-radius: 12px;
