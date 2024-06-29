@@ -149,11 +149,13 @@ if(navigator.serviceWorker){
 
 //Detectar cambio de conexion a online
 window.addEventListener('online',()=>{
-    M.toast({html: 'Conexión restablecida - Estás en línea' })
+    console.log("activo")
+    //M.toast({html: 'Conexión restablecida - Estás en línea' })
 });
 
 //Detectar cambio de conexion a offline
 window.addEventListener('offline',()=>{
+    console.log("offline")
     M.toast({ html: 'Conexión perdida - Estás offline'})
 })
 
