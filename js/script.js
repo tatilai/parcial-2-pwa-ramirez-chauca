@@ -147,6 +147,18 @@ if(navigator.serviceWorker){
     });
 }
 
+//Detectar cambio de conexion a online
+window.addEventListener('online',()=>{
+    M.toast({html: 'Conexión restablecida - Estás en línea' })
+});
+
+//Detectar cambio de conexion a offline
+window.addEventListener('offline',()=>{
+    M.toast({ html: 'Conexión perdida - Estás offline'})
+})
+
+
+//Boton instalacion
 window.addEventListener("beforeinstallprompt", (e) => {
     console.log("beforeinstallprompt", e)
     eventoDeInstalacion = e;
