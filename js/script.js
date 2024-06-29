@@ -132,7 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-if(navigator.serviceWorker){
+
+
+/*if(navigator.serviceWorker){
     navigator.serviceWorker.register('./sw.js').then(()=>{
        //mostrarToast({html:`Modo offline activado`}) 
       // console.log("registrado");
@@ -142,6 +144,16 @@ if(navigator.serviceWorker){
         M.toast({html: `fallo registro service worker`})
         //console.error("fallo");
     });
+}*/
+
+
+if(navigator?.serviceWorker) {
+    navigator.serviceWorker.register('./sw.js').then((register) => {
+        M.toast({html: `Modo offline activado`})
+    })
+    .catch((error) => {
+        console.log("")
+    })
 }
 
 
