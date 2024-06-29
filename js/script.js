@@ -140,7 +140,7 @@ navigator.serviceWorker.register('./sw.js').then(()=>{
        //mostrarToast({html:`Modo offline activado`}) 
        console.log("registrado");
       M.toast({html: `Modo offline activado`})
-      alert("online")
+      //alert("online")
     })
     .catch(()=>{
         M.toast({html: `fallo registro service worker`})
