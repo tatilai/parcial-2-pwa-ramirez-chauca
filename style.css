@@ -217,3 +217,9 @@ i.material-icons{
 i.btn-floating {
     position: fixed;
 }
+
+h2{
+    font-weight: 800;
+    color: rgb(238, 230, 144);
+    padding-bottom: 2rem;
+}
