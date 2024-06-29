@@ -135,7 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
 if(navigator.serviceWorker){
     navigator.serviceWorker.register('./sw.js').then(()=>{
        //mostrarToast({html:`Modo offline activado`}) 
-       console.log("registrado");
+      // console.log("registrado");
+      M.toast({html: `Modo offline activado`})
     })
     .catch(()=>{
         console.error("fallo");
